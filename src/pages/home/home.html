@@ -1,11 +1,17 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Progressive Weather
-    </ion-title>
-  </ion-navbar>
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-searchbar
+      [(ngModel)]="myInput"
+      (ionInput)="onInput($event)">
+    </ion-searchbar>
+
+  </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
-
+<ion-content class="home" padding>
+  <button ion-item *ngFor="let result of results" (click)="getWeather(result.name)">
+    <h2>{{ result.name}}</h2>
+    <p>{{ result.region }}</p>
+    <p>{{ result.country }}</p>
+  </button>
 </ion-content>

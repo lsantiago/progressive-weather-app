@@ -1,0 +1,44 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Weather Page
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="weather" padding>
+    <div *ngIf="current">
+        <h2>{{ location.name }}</h2>
+        <p>Temperature {{ current.temp_c }}º</p>
+        <p>Humidity {{ current.humidity}}%</p>
+        <p>Feels like {{ current.feelslike_c }}º</p>
+    </div>
+    
+    <h2>Forecast</h2>
+    <ion-segment *ngIf="forecast" [(ngModel)]="segmentSelected" 
+                 (ionChange)="segmentChanged($event)">
+        <ion-segment-button value="0">
+            Today
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            Tomorrow
+        </ion-segment-button>
+        <ion-segment-button value="2">
+            After tomorrow
+        </ion-segment-button>
+    </ion-segment>
+    <div class="scrollable" *ngIf="daySelected">
+        <ion-list>
+            <ion-scroll scrollY="true">
+                <ion-item *ngFor="let hour of daySelected.hour">
+                    <ion-avatar item-left>
+                        <img [src]="hour.condition.icon">
+                    </ion-avatar>
+                    <p>Temperature {{ hour.temp_c}}º</p>
+                    <p>Feels like {{ hour.feelslike_c}}º</p>                
+                    <p>Humidity {{ hour.humidity}}%</p>
+                </ion-item>
+            </ion-scroll>
+        </ion-list>
+    </div>
+</ion-content>
