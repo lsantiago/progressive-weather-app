@@ -14,7 +14,7 @@ export class WeatherPage implements OnInit{
   forecast;
   segmentSelected = 0;
   daySelected;
-  
+
   constructor(private weather: WeatherService,
               private navParams: NavParams) {}
 
@@ -27,6 +27,7 @@ export class WeatherPage implements OnInit{
 
     this.weather.forecast(place, 3).subscribe(data => {
       this.forecast = data.forecast.forecastday;
+      this.daySelected = this.forecast[0];
     });
   }
 
