@@ -18,8 +18,6 @@
                 <div class="wind">Wind {{ current.wind_mph }} mph</div>
             </ion-col>
         </ion-row>
-    </ion-grid>
-    <ion-grid>
         <ion-row *ngIf="forecast">
             <ion-col>
                 <ion-segment [(ngModel)]="segmentSelected" (ionChange)="segmentChanged($event)">
@@ -35,20 +33,20 @@
                 </ion-segment>
             </ion-col>
         </ion-row>
+    </ion-grid>
+    <ion-grid class="forecast">
         <ion-row *ngIf="daySelected">
             <ion-col>
-                <ion-list class="scrollable">
-                    <ion-scroll scrollY="true">
-                        <ion-item *ngFor="let hour of daySelected.hour">
-                            <ion-avatar item-left>
-                                <img [src]="hour.condition.icon">
-                            </ion-avatar>
-                            <p>Temperature {{ hour.temp_c}}º</p>
-                            <p>Feels like {{ hour.feelslike_c}}º</p>                
-                            <p>Humidity {{ hour.humidity}}%</p>
-                        </ion-item>
-                    </ion-scroll>
-                </ion-list>
+                <ion-row *ngFor="let hour of daySelected.hour">
+                    <ion-item>
+                        <ion-avatar item-left>
+                            <img [src]="hour.condition.icon">
+                        </ion-avatar>
+                        <p>Temperature {{ hour.temp_c}}º</p>
+                        <p>Feels like {{ hour.feelslike_c}}º</p>                
+                        <p>Humidity {{ hour.humidity}}%</p>
+                    </ion-item>
+                </ion-row>
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -12,7 +12,7 @@ export class WeatherPage implements OnInit{
   current;
   location;
   forecast;
-  segmentSelected = 0;
+  segmentSelected;
   daySelected;
 
   constructor(private weather: WeatherService,
@@ -28,12 +28,12 @@ export class WeatherPage implements OnInit{
     this.weather.forecast(place, 3).subscribe(data => {
       this.forecast = data.forecast.forecastday;
       this.daySelected = this.forecast[0];
+      this.segmentSelected = "0";
     });
   }
 
   segmentChanged(event) {
     this.daySelected = this.forecast[event.value];
-    console.log(this.daySelected);
   }
 
 }
