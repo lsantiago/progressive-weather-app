@@ -9,12 +9,14 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { WeatherPage } from '../pages/weather/weather';
 import { WeatherService } from '../services/weather.service';
+import { ForecastItem } from '../components/forecast-item/forecast-item.component';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    WeatherPage
+    WeatherPage,
+    ForecastItem
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import { WeatherService } from '../services/weather.service';
   entryComponents: [
     MyApp,
     HomePage,
-    WeatherPage
+    WeatherPage,
+    ForecastItem
   ],
   providers: [
     StatusBar,

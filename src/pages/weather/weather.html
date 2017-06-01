@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="first">
         <ion-title *ngIf="current">
            {{ location.name }}
         </ion-title>
@@ -38,14 +38,7 @@
         <ion-row *ngIf="daySelected">
             <ion-col>
                 <ion-row *ngFor="let hour of daySelected.hour">
-                    <ion-item>
-                        <ion-avatar item-left>
-                            <img [src]="hour.condition.icon">
-                        </ion-avatar>
-                        <p>Temperature {{ hour.temp_c}}º</p>
-                        <p>Feels like {{ hour.feelslike_c}}º</p>                
-                        <p>Humidity {{ hour.humidity}}%</p>
-                    </ion-item>
+                    <forecast-item [hour]="hour"></forecast-item>
                 </ion-row>
             </ion-col>
         </ion-row>
