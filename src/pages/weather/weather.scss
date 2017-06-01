@@ -3,19 +3,21 @@
     background-color: #99ebff;
 
     .current {
+        height: 140px;
         position: fixed;
         font-weight: bold;
-        color: #fff;
-        text-shadow: 1px 1px 2px #8e8e8e;
         background-color: rgba(153, 235, 255, 1);
         z-index: 1;
 
         .temperature {
             font-size: 5em;
+            color: #fff;
+            text-shadow: 1px 1px 2px #8e8e8e;
         }
 
         .humidity, .feelslike, .wind {
             font-size: 20px;
+            color: #488aff;
         }
     }
 
@@ -24,6 +26,8 @@
     }
 
     .forecast {
+        margin-top: 130px;
+
         ion-row{
             .item.item-block.item-md {
                 background-color: transparent;
