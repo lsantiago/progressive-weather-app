@@ -11,9 +11,7 @@ export class ForecastItem implements OnInit{
   constructor() {}
 
   ngOnInit() {
-    let utcSeconds = this.hour.time_epoch;
-    let date = new Date(0);
-    date.setUTCSeconds(utcSeconds);
-    this.hour.hour = date.getHours();
+    let hour = this.hour.time.split(' ')[1];
+    this.hour.hour = hour;
   }
 }
