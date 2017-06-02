@@ -29,9 +29,14 @@
         margin-top: 130px;
 
         ion-row{
-            .item.item-block.item-md {
-                background-color: transparent;
-            }    
+            .item.item-block{
+                .item-inner {
+                    border-bottom: none;
+                }
+                &.item-md {
+                    background-color: transparent;
+                }  
+            }  
         }
     }
 }
