@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { WeatherPage } from '../pages/weather/weather';
+import { SettingsPage } from '../pages/settings/settings';
 import { WeatherService } from '../services/weather.service';
 import { ForecastItem } from '../components/forecast-item/forecast-item.component';
 
@@ -16,6 +17,7 @@ import { ForecastItem } from '../components/forecast-item/forecast-item.componen
     MyApp,
     HomePage,
     WeatherPage,
+    SettingsPage,
     ForecastItem
   ],
   imports: [
@@ -28,6 +30,7 @@ import { ForecastItem } from '../components/forecast-item/forecast-item.componen
     MyApp,
     HomePage,
     WeatherPage,
+    SettingsPage,
     ForecastItem
   ],
   providers: [

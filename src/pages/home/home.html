@@ -1,10 +1,13 @@
-<ion-header no-border>
-  <ion-toolbar>
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
     <ion-searchbar
       [(ngModel)]="myInput"
       (ionInput)="onInput($event)">
     </ion-searchbar>
-  </ion-toolbar>
+  </ion-navbar>
 </ion-header>
 
 <ion-content class="home" padding>

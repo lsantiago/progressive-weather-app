@@ -13,6 +13,5 @@ export class ForecastItem implements OnInit{
   ngOnInit() {
     let hour = this.hour.time.split(' ')[1];
     this.hour.hour = hour;
-    this.hour.condition.icon = 'https:' + this.hour.condition.icon;
   }
 }

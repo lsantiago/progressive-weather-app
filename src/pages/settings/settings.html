@@ -1,0 +1,32 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+          Settings
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <ion-item-group>
+    <ion-item-divider>Weather Info</ion-item-divider>
+    <ion-item>
+        <ion-label>Temperature</ion-label>
+        <ion-select [(ngModel)]="temperature">
+            <ion-option value="celsius">Celsius</ion-option>
+            <ion-option value="farenheit">Farenheit</ion-option>
+        </ion-select>
+    </ion-item>
+    <ion-item>
+        <ion-label>Day info</ion-label>
+        <ion-select [(ngModel)]="info">
+            <ion-option value="daily">Daily</ion-option>
+            <ion-option value="hourly">Hourly</ion-option>
+        </ion-select>
+    </ion-item>
+    </ion-item-group>
+</ion-content>
+
+
