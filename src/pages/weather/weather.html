@@ -37,9 +37,15 @@
         <ion-row *ngIf="current">
             <ion-col col-4>
                 <ion-row>
-                    <ion-icon name="wi-wind"></ion-icon>
+                    <ion-icon name="water"></ion-icon>
                 </ion-row>
-                <ion-row>{{ current.wind_mph }}m/h</ion-row>
+                <ion-row>{{ current.humidity }}%</ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-thermometer"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.max_c }} / {{ current.min_c }}</ion-row>
             </ion-col>
             <ion-col col-4>
                 <ion-row>
@@ -47,11 +53,12 @@
                 </ion-row>
                 <ion-row>{{ current.wind_mph }}m/h</ion-row>
             </ion-col>
-            <ion-col col-4>
-                <ion-row>
-                    <ion-icon name="wi-wind"></ion-icon>
-                </ion-row>
-                <ion-row>{{ current.wind_mph }}m/h</ion-row>
+        </ion-row>
+    </ion-grid>
+    <ion-grid class="forecast" *ngIf="forecast">
+        <ion-row>
+            <ion-col *ngFor="let day of forecast" col-4>
+                <forecast-item [day]="day"></forecast-item> 
             </ion-col>
         </ion-row>
     </ion-grid>

@@ -1,8 +1,11 @@
-<ion-item>
-    <ion-avatar item-left>
-        <img [src]="hour.condition.icon">
-    </ion-avatar>
-    <p>{{ hour.hour }}</p>
-    <p>Temperature {{ hour.temp_c }}º</p>
-    <p>Humidity {{ hour.humidity }}%</p>
-</ion-item>
+<ion-grid>
+    <ion-row>
+        {{day.date}}
+    </ion-row>
+    <ion-row>
+        <ion-icon name="wi-{{day.day.condition.lowertext}}"></ion-icon>
+    </ion-row>
+    <ion-row>
+        {{day.day.maxtemp_c}} / {{day.day.mintemp_c}}
+    </ion-row>
+</ion-grid>

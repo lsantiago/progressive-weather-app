@@ -6,12 +6,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ForecastItem implements OnInit{
 
-  @Input('hour') hour;
+  @Input('day') day;
 
   constructor() {}
 
   ngOnInit() {
-    let hour = this.hour.time.split(' ')[1];
-    this.hour.hour = hour;
+    this.day.day.condition.lowertext = this.day.day.condition.text.toLowerCase();
   }
 }

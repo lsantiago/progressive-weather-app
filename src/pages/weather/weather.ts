@@ -12,29 +12,23 @@ export class WeatherPage implements OnInit{
   current;
   location;
   forecast;
-  segmentSelected;
-  daySelected;
 
   constructor(private weather: WeatherService,
               private navParams: NavParams) {}
 
   ngOnInit() {
     let place = this.navParams.get('place');
+
     this.weather.weather(place).subscribe(data => {
       this.current = data.current;
       this.current.condition.lowertext = this.current.condition.text.toLowerCase();
       this.location = data.location;
-    });
-
-    this.weather.forecast(place, 3).subscribe(data => {
-      this.forecast = data.forecast.forecastday;
-      this.daySelected = this.forecast[0];
-      this.segmentSelected = "0";
+      
+      this.weather.forecast(place, 3).subscribe(data => {
+        this.forecast = data.forecast.forecastday;
+        this.current.max_c = this.forecast[0].day.maxtemp_c;
+        this.current.min_c = this.forecast[0].day.mintemp_c;
+      });
     });
   }
-
-  segmentChanged(event) {
-    this.daySelected = this.forecast[event.value];
-  }
-
 }
