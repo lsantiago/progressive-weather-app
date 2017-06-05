@@ -102,11 +102,11 @@ $ionicons-font-path: "../assets/fonts";
 }
 
 @mixin makeIcon($arg, $val) {
-  .ys-#{$arg}:before ,
-  .ion-ios-ys-#{$arg}:before ,
-  .ion-ios-ys-#{$arg}-outline:before ,
-  .ion-md-ys-#{$arg}:before ,
-  .ion-md-ys-#{$arg}-outline:before  {
+  .wi-#{$arg}:before ,
+  .ion-ios-wi-#{$arg}:before ,
+  .ion-ios-wi-#{$arg}-outline:before ,
+  .ion-md-wi-#{$arg}:before ,
+  .ion-md-wi-#{$arg}-outline:before  {
     content: $val;
     font-size: 26px;
   }
@@ -114,6 +114,52 @@ $ionicons-font-path: "../assets/fonts";
 
 
 @include makeIcon(sunrise, '\e900');
+@include makeIcon(sunny, '\e901');
+@include makeIcon(moon, '\e902');
+@include makeIcon(sun2, '\e903');
+@include makeIcon(windy, '\e904');
+@include makeIcon(wind, '\e905');
+@include makeIcon(snowflake, '\e906');
+@include makeIcon(cloudy, '\e907');
+@include makeIcon(cloud, '\e908');
+@include makeIcon(weather, '\e909');
+@include makeIcon(weather2, '\e90a');
+@include makeIcon(weather3, '\e90b');
+@include makeIcon(lines, '\e90c');
+@include makeIcon(cloud2, '\e90d');
+@include makeIcon(lightning, '\e90e');
+@include makeIcon(lightning2, '\e90f');
+@include makeIcon(rainy, '\e910');
+@include makeIcon(rainy2, '\e911');
+@include makeIcon(windy2, '\e912');
+@include makeIcon(windy3, '\e913');
+@include makeIcon(snowy, '\e914');
+@include makeIcon(snowy2, '\e915');
+@include makeIcon(snowy3, '\e916');
+@include makeIcon(weather4, '\e917');
+@include makeIcon(cloudy2, '\e918');
+@include makeIcon(cloudy3, '\e919');
+@include makeIcon(lightnin3, '\e91a');
+@include makeIcon(sun3, '\e91b');
+@include makeIcon(moon2, '\e91c');
+@include makeIcon(cloudy3, '\e91d');
+@include makeIcon(cloud4, '\e91e');
+@include makeIcon(cloud5, '\e91f');
+@include makeIcon(lightning4, '\e920');
+@include makeIcon(rainy3, '\e921');
+@include makeIcon(rainy4, '\e922');
+@include makeIcon(windy4, '\e923');
+@include makeIcon(windy5, '\e924');
+@include makeIcon(snowy4, '\e925');
+@include makeIcon(snowy5, '\e926');
+@include makeIcon(weather5, '\e927');
+@include makeIcon(cloudy4, '\e928');
+@include makeIcon(lightning5, '\e929');
+@include makeIcon(thermometer, '\e92a');
+@include makeIcon(compass, '\e92b');
+@include makeIcon(none, '\e92c');
+@include makeIcon(celsius, '\e92d');
+@include makeIcon(fahrenheit, '\e92e');
 
 // Fonts
 // --------------------------------------------------

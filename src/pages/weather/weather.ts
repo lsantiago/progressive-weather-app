@@ -22,6 +22,7 @@ export class WeatherPage implements OnInit{
     let place = this.navParams.get('place');
     this.weather.weather(place).subscribe(data => {
       this.current = data.current;
+      this.current.condition.lowertext = this.current.condition.text.toLowerCase();
       this.location = data.location;
     });
 

@@ -1,42 +1,66 @@
+.weather-header {
+    ion-navbar {
+        .back-button {
+            z-index: 9;
+        }
+
+        .toolbar-content {
+            width: 100%;
+            position: absolute;
+        }
+    }
+}
+
 .weather {
+    background-image: url('../assets/img/sunny.jpg');
+    background-size: cover;
+    background-position: 0 0;
+    background-repeat: no-repeat;
 
-    background-color: #99ebff;
-
-    .current {
-        height: 140px;
-        position: fixed;
-        font-weight: bold;
-        background-color: rgba(153, 235, 255, 1);
-        z-index: 1;
-
-        .temperature {
-            font-size: 3.5em;
-            color: #fff;
-            text-shadow: 1px 1px 2px #8e8e8e;
+    .current-info {
+        ion-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .humidity, .feelslike, .wind {
-            font-size: 20px;
-            color: #488aff;
+        .temperature-col {
+            align-items: flex-end;
+
+            .temperature {
+                font-size: 10rem;
+            }
         }
-    }
 
-    .scroll-content {
-        padding: 0 !important;
-    }
+        .icon-col {
+            align-items: flex-start;
 
-    .forecast {
-        margin-top: 130px;
-
-        ion-row{
-            .item.item-block{
-                .item-inner {
-                    border-bottom: none;
+            .celsius-icon {
+                &::before {
+                    font-size: 7rem;   
                 }
-                &.item-md {
-                    background-color: transparent;
-                }  
-            }  
+            }
+        }
+
+        .condition-text {
+            .weather-icon {
+                &::before {
+                    font-size: 1.5rem;   
+                }
+            }
+        }
+    }
+
+    .more-info {
+        ion-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-right: 1px solid;
+
+            &:last-child() {
+                border-right: none;
+            }
         }
     }
 }

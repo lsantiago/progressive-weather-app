@@ -1,42 +1,58 @@
-<ion-header>
-    <ion-navbar color="first">
-        <ion-title *ngIf="current">
+<ion-header no-border class="weather-header">
+    <ion-navbar transparent>
+        <ion-title text-center *ngIf="current">
            {{ location.name }}
         </ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content class="weather" padding>
-    <ion-grid class="current">
-        <ion-row  *ngIf="current">
-            <ion-col col-5>
-                <div class="temperature">{{ current.temp_c }}º</div>
+    <ion-grid *ngIf="current" class="current-info">
+        <ion-row>
+            <ion-col class="temperature-col">
+                <div class="temperature">
+                    {{ current.temp_c }}
+                </div>
             </ion-col>
-            <ion-col>
-                <div class="humidity">Humidity {{ current.humidity}}%</div>
-                <div class="feelslike">Feels like {{ current.feelslike_c }}º</div>
-                <div class="wind">Wind {{ current.wind_mph }} mph</div>
+            <ion-col class="icon-col">
+                <ion-row>
+                    <ion-icon class="celsius-icon" name="wi-celsius"></ion-icon>
+                </ion-row>
             </ion-col>
         </ion-row>
-        <ion-row *ngIf="forecast">
+        <ion-row class="condition-text">
             <ion-col>
-                <ion-segment [(ngModel)]="segmentSelected" (ionChange)="segmentChanged($event)">
-                    <ion-segment-button value="0">
-                        Today
-                    </ion-segment-button>
-                    <ion-segment-button value="1">
-                        Tomorrow
-                    </ion-segment-button>
-                    <ion-segment-button value="2">
-                        After tomorrow
-                    </ion-segment-button>
-                </ion-segment>
+                <div>
+                    <ion-icon class="weather-icon" name="wi-{{current.condition.lowertext}}"></ion-icon>  {{ current.condition.text }} 
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                Real Feel {{ current.feelslike_c }}
             </ion-col>
         </ion-row>
     </ion-grid>
-    <ion-grid class="forecast" *ngIf="daySelected">
-        <ion-row *ngFor="let hour of daySelected.hour">
-            <forecast-item [hour]="hour"></forecast-item>
+    <ion-grid class="more-info">
+        <ion-row *ngIf="current">
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-wind"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.wind_mph }}m/h</ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-wind"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.wind_mph }}m/h</ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-wind"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.wind_mph }}m/h</ion-row>
+            </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>
