@@ -21,7 +21,6 @@ export class WeatherPage implements OnInit{
 
     this.weather.weather(place).subscribe(data => {
       this.current = data.current;
-      this.current.condition.lowertext = this.current.condition.text.toLowerCase();
       this.location = data.location;
       
       this.weather.forecast(place, 3).subscribe(data => {

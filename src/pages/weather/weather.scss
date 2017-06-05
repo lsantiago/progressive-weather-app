@@ -52,6 +52,9 @@
     }
 
     .more-info {
+        background-color: rgba(255,255,255,0.2);
+        margin-top: 5px;
+        
         ion-col {
             display: flex;
             flex-direction: column;
@@ -65,6 +68,17 @@
 
         .icon.icon-md.ion-md-water {
             font-size: 26px;
+        }
+    }
+
+    .forecast {
+        background-color: rgba(255,255,255,0.2);
+        margin-top: 5px;
+        
+        forecast-item {
+            .grid {
+                align-items: center;
+            }
         }
     }
 }
