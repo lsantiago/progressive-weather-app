@@ -55,6 +55,34 @@
             </ion-col>
         </ion-row>
     </ion-grid>
+    <ion-grid *ngIf="forecast" class="astro-info">
+        <ion-row>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-sunrise"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.astro.sunrise }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-sunny"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.astro.sunset }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-weather2"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.astro.moonrise }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-moon"></ion-icon>
+                </ion-row>
+                <ion-row>{{ current.astro.moonset }}</ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
     <ion-grid class="forecast" *ngIf="forecast">
         <ion-row>
             <ion-col *ngFor="let day of forecast" col-4>

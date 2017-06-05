@@ -27,6 +27,7 @@ export class WeatherPage implements OnInit{
         this.forecast = data.forecast.forecastday;
         this.current.max_c = this.forecast[0].day.maxtemp_c;
         this.current.min_c = this.forecast[0].day.mintemp_c;
+        this.current.astro = this.forecast[0].astro;
       });
     });
   }
