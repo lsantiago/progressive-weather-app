@@ -1,11 +1,8 @@
 <ion-grid>
-    <ion-row>
-        {{day.date}}
+    <ion-row margin-bottom>
+        {{day.datetext}}
     </ion-row>
-    <ion-row>
-        <ion-icon name="wi-{{day.day.condition.lowertext}}"></ion-icon>
-    </ion-row>
-    <ion-row>
+    <ion-row margin-top>
         {{day.day.maxtemp_c}} / {{day.day.mintemp_c}}
     </ion-row>
 </ion-grid>
