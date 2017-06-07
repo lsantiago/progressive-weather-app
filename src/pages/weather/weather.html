@@ -85,9 +85,11 @@
     </ion-grid>
     <ion-grid class="forecast" *ngIf="forecast">
         <ion-row>
-            <ion-col *ngFor="let day of forecast" col-4>
-                <forecast-item [day]="day"></forecast-item> 
-            </ion-col>
+            <ion-col>
+                <ion-scroll scrollX="true">
+                    <forecast-item *ngFor="let day of forecast" class="scroll-item selectable-icon" [day]="day"></forecast-item>
+                </ion-scroll>
+            </ion-col> 
         </ion-row>
     </ion-grid>
 </ion-content>

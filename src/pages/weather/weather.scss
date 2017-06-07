@@ -5,11 +5,16 @@ weather-page {
         ion-navbar {
             .back-button {
                 z-index: 9;
+                color: black;
             }
 
             .toolbar-content {
                 width: 100%;
                 position: absolute;
+
+                .toolbar-title {
+                    color: black;
+                }
             }
         }
     }
@@ -59,7 +64,7 @@ weather-page {
         }
 
         .more-info, .astro-info {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.4);
             margin-top: 5px;
             
             ion-col {
@@ -79,12 +84,34 @@ weather-page {
         }
 
         .forecast {
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.4);
             margin-top: 5px;
             
             forecast-item {
-                .grid {
-                    align-items: center;
+                border-right: 1px solid;
+
+                &:last-child() {
+                    border-right: none;
+                }
+            }
+
+            ion-scroll[scrollX] {
+                white-space: nowrap;
+                height: 75px;
+                overflow: hidden;
+
+                .scroll-content {
+                    background-color: transparent;
+                    padding: 0;
+                }
+
+                .scroll-item {
+                    display: inline-block;
+                }
+
+                .selectable-icon{
+                    padding: 6px;
+                    color: black;
                 }
             }
         }
