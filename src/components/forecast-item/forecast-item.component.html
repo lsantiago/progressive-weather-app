@@ -1,9 +1,22 @@
-<ion-row>
-    {{day.datetext}}
-</ion-row>
-<ion-row>
-    <ion-icon name="wi-sunny"></ion-icon>
-</ion-row>
-<ion-row>
-    {{day.day.maxtemp_c}} / {{day.day.mintemp_c}}
-</ion-row>
+<div *ngIf="day">
+    <ion-row>
+        {{ day.datetext }}
+    </ion-row>
+    <ion-row>
+        <ion-icon name="wi-sunny"></ion-icon>
+    </ion-row>
+    <ion-row>
+        {{ day.day.maxtemp_c }}/{{ day.day.mintemp_c }}
+    </ion-row>
+</div>
+<div *ngIf="hour">
+    <ion-row>
+        {{ hour.hour }}
+    </ion-row>
+    <ion-row>
+        <ion-icon name="wi-sunny"></ion-icon>
+    </ion-row>
+    <ion-row>
+        {{ hour.temp_c }}
+    </ion-row>
+</div>

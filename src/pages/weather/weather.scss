@@ -87,11 +87,22 @@ weather-page {
             background-color: rgba(255,255,255,0.4);
             margin-top: 5px;
             
+            ion-row {
+                ion-col {
+                    padding: 0px;
+                }
+            }
+            
             forecast-item {
                 border-right: 1px solid;
 
                 &:last-child() {
                     border-right: none;
+                }
+
+                ion-row {
+                    display: flex;
+                    justify-content: center;
                 }
             }
 

@@ -8,13 +8,21 @@ import * as dateFns from 'date-fns';
 export class ForecastItem implements OnInit{
 
   @Input('day') day;
+  @Input('hour') hour;
 
   constructor() {}
 
   ngOnInit() {
-    this.day.day.condition.lowertext = this.day.day.condition.text.toLowerCase();    
-    let parts = this.day.date.split('-');
-    let date = new Date(parts[0], parts[1]-1, parts[2]);
+    if (this.day) {
+      let parts = this.day.date.split('-');
+      let date = new Date(parts[0], parts[1]-1, parts[2]);
+      this.getDay(date);
+    } else {
+      this.hour.hour = this.hour.time.split(' ')[1];
+    }
+  }
+
+  getDay(date) {
     if (dateFns.isToday(date)){
       this.day.datetext = 'Today';
     } else if (dateFns.isTomorrow(date)) {

@@ -12,6 +12,7 @@ export class WeatherPage implements OnInit{
   current;
   location;
   forecast;
+  today;
 
   constructor(private weather: WeatherService,
               private navParams: NavParams) {}
@@ -25,6 +26,7 @@ export class WeatherPage implements OnInit{
       
       this.weather.forecast(place, 7).subscribe(data => {
         this.forecast = data.forecast.forecastday;
+        this.today = this.forecast[0];
         this.current.max_c = this.forecast[0].day.maxtemp_c;
         this.current.min_c = this.forecast[0].day.mintemp_c;
         this.current.astro = this.forecast[0].astro;
