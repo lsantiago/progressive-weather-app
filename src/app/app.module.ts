@@ -10,13 +10,17 @@ import { HomePage } from '../pages/home/home';
 import { WeatherPage } from '../pages/weather/weather';
 import { WeatherService } from '../services/weather.service';
 import { ForecastItem } from '../components/forecast-item/forecast-item.component';
+import { ForecastClickableDirective } from '../directives/forecast.clickable.directive';
+import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     WeatherPage,
-    ForecastItem
+    ForecastItem,
+    ForecastClickableDirective,
+    ForecastModal
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,8 @@ import { ForecastItem } from '../components/forecast-item/forecast-item.componen
     MyApp,
     HomePage,
     WeatherPage,
-    ForecastItem
+    ForecastItem,
+    ForecastModal
   ],
   providers: [
     StatusBar,

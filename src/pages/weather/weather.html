@@ -96,7 +96,7 @@
         <ion-row>
             <ion-col>
                 <ion-scroll scrollX="true">
-                    <forecast-item *ngFor="let day of forecast" class="scroll-item selectable-icon" [day]="day"></forecast-item>
+                    <forecast-item [forecastClickable]="day" *ngFor="let day of forecast" class="scroll-item selectable-icon" [day]="day" padding></forecast-item>
                 </ion-scroll>
             </ion-col> 
         </ion-row>

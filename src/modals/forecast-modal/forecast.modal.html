@@ -1,0 +1,71 @@
+<ion-header no-border>
+  <ion-navbar transparent>
+    <ion-buttons start>
+      <button ion-button icon-only (click)="dismiss()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title text-center>{{ day.datetext }}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content class="forecast-modal">
+    <ion-grid *ngIf="day" class="more-info">
+        <ion-row>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="water"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.day.avghumidity }}%</ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-thermometer"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.day.maxtemp_c }} / {{ day.day.mintemp_c }}</ion-row>
+            </ion-col>
+            <ion-col col-4>
+                <ion-row>
+                    <ion-icon name="wi-wind"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.day.maxwind_mph }}m/h</ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="day" class="astro-info">
+        <ion-row>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-sunrise"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.astro.sunrise }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-sunny"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.astro.sunset }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-weather2"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.astro.moonrise }}</ion-row>
+            </ion-col>
+            <ion-col col-3>
+                <ion-row>
+                    <ion-icon name="wi-moon"></ion-icon>
+                </ion-row>
+                <ion-row>{{ day.astro.moonset }}</ion-row>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-grid *ngIf="day" class="forecast">
+        <ion-row>
+            <ion-col>
+                <ion-scroll scrollX="true">
+                    <forecast-item *ngFor="let hour of day.hour" class="scroll-item selectable-icon" [hour]="hour"></forecast-item>
+                </ion-scroll>
+            </ion-col> 
+        </ion-row>
+    </ion-grid>
+</ion-content>
