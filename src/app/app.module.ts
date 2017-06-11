@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { WeatherPage } from '../pages/weather/weather';
 import { WeatherService } from '../services/weather.service';
+import { ConditionsService } from '../services/conditions.service';
 import { ForecastItem } from '../components/forecast-item/forecast-item.component';
 import { ForecastClickableDirective } from '../directives/forecast.clickable.directive';
 import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
@@ -39,7 +40,8 @@ import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    WeatherService
+    WeatherService,
+    ConditionsService
   ]
 })
 export class AppModule {}

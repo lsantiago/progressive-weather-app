@@ -1,4 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
+
+import { ConditionsService} from '../../services/conditions.service';
+
 import * as dateFns from 'date-fns';
 
 @Component({
@@ -10,7 +13,7 @@ export class ForecastItem implements OnInit{
   @Input('day') day;
   @Input('hour') hour;
 
-  constructor() {}
+  constructor(private conditions: ConditionsService) {}
 
   ngOnInit() {
     if (this.day) {
@@ -19,7 +22,13 @@ export class ForecastItem implements OnInit{
       this.getDay(date);
     } else {
       this.hour.hour = this.hour.time.split(' ')[1];
+      this.hour.img = '../assets/imgs/' + this.isDay(this.hour.is_day) + '/' + 
+                      this.conditions.getDataFromCode(this.hour.condition.code).icon + '.png';
     }
+  }
+
+  isDay(day) {
+    return day === 1 ? 'day' : 'night';
   }
 
   getDay(date) {

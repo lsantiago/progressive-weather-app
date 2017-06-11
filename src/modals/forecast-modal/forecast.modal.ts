@@ -11,7 +11,6 @@ export class ForecastModal implements OnInit{
 
   constructor(public viewCtrl: ViewController, params: NavParams) {
      this.day =  params.get('day');
-     console.log(this.day);
   }
 
   ngOnInit() {

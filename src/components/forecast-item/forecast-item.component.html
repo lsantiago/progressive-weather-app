@@ -1,11 +1,8 @@
 <div *ngIf="day">
-    <ion-row>
+    <ion-row margin-bottom>
         {{ day.datetext }}
     </ion-row>
-    <ion-row>
-        <ion-icon name="wi-sunny"></ion-icon>
-    </ion-row>
-    <ion-row>
+    <ion-row margin-top>
         {{ day.day.maxtemp_c }}/{{ day.day.mintemp_c }}
     </ion-row>
 </div>
@@ -14,7 +11,7 @@
         {{ hour.hour }}
     </ion-row>
     <ion-row>
-        <ion-icon name="wi-sunny"></ion-icon>
+        <img height="32" width="32" [src]="hour.img">
     </ion-row>
     <ion-row>
         {{ hour.temp_c }}
