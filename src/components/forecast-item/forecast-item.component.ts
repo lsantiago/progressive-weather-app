@@ -22,7 +22,7 @@ export class ForecastItem implements OnInit{
       this.getDay(date);
     } else {
       this.hour.hour = this.hour.time.split(' ')[1];
-      this.hour.img = '../assets/imgs/' + this.isDay(this.hour.is_day) + '/' + 
+      this.hour.img = 'assets/imgs/' + this.isDay(this.hour.is_day) + '/' + 
                       this.conditions.getDataFromCode(this.hour.condition.code).icon + '.png';
     }
   }
