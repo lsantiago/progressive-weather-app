@@ -30,4 +30,11 @@ export class WeatherService {
             .get(url)
             .map(res => res.json());
     }
+
+    moonphases(date, num) {
+        let url = 'http://api.usno.navy.mil/moon/phase?date=' + date + '&nump=' + num;
+        return this.http
+            .get(url)
+            .map(res => res.json());
+    }
 }
