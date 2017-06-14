@@ -1,7 +1,6 @@
 weather-page {
     
     .weather-header {
-        background: rgba(0, 0, 0, 0.2);
         ion-navbar {
             .back-button {
                 z-index: 9;
@@ -107,8 +106,16 @@ weather-page {
             }
 
             ion-scroll[scrollX] {
+
+                &.hourly {
+                    height: 75px;
+                }
+
+                &.daily {
+                    height: 60px;                    
+                }
+
                 white-space: nowrap;
-                height: 75px;
                 overflow: hidden;
 
                 .scroll-content {
