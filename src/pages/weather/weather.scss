@@ -4,7 +4,7 @@ weather-page {
         ion-navbar {
             .back-button {
                 z-index: 9;
-                color: black;
+                color: white;
             }
 
             .toolbar-content {
@@ -12,14 +12,14 @@ weather-page {
                 position: absolute;
 
                 .toolbar-title {
-                    color: black;
+                    color: white;
                 }
             }
         }
     }
 
     .weather {
-        background-image: url('../assets/imgs/sunny.jpg');
+        background-image: url('../assets/imgs/background.png');
         background-size: cover;
         background-position: 0 0;
         background-repeat: no-repeat;
@@ -29,6 +29,8 @@ weather-page {
         }
 
         .current-info {
+            color: white;
+
             ion-col {
                 display: flex;
                 flex-direction: column;

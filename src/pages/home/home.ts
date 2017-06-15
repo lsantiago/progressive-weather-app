@@ -5,12 +5,12 @@ import { WeatherPage } from '../weather/weather';
 import { WeatherService } from '../../services/weather.service';
 
 @Component({
-  selector: 'page-home',
+  selector: 'home-page',
   templateUrl: 'home.html'
 })
 export class HomePage implements OnInit{
 
-  results;
+  results = [];
 
   constructor(private weather: WeatherService,
               private navCtrl: NavController) {}

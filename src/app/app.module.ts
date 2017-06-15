@@ -11,6 +11,7 @@ import { WeatherPage } from '../pages/weather/weather';
 import { WeatherService } from '../services/weather.service';
 import { ConditionsService } from '../services/conditions.service';
 import { ForecastItem } from '../components/forecast-item/forecast-item.component';
+import { ResultItem } from '../components/result-item/result-item.component';
 import { ForecastClickableDirective } from '../directives/forecast.clickable.directive';
 import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
 
@@ -20,6 +21,7 @@ import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
     HomePage,
     WeatherPage,
     ForecastItem,
+    ResultItem,
     ForecastClickableDirective,
     ForecastModal
   ],
@@ -34,6 +36,7 @@ import { ForecastModal } from '../modals/forecast-modal/forecast.modal';
     HomePage,
     WeatherPage,
     ForecastItem,
+    ResultItem,
     ForecastModal
   ],
   providers: [

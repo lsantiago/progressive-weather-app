@@ -1,5 +1,5 @@
-<ion-header>
-  <ion-navbar>
+<ion-header no-border>
+  <ion-navbar transparent>
     <ion-searchbar
       [(ngModel)]="myInput"
       (ionInput)="onInput($event)">
@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content class="home" padding>
-  <button ion-item *ngFor="let result of results" (click)="getWeather(result.name)">
-    <h2>{{ result.name}}</h2>
-    <p>{{ result.region }}</p>
-    <p>{{ result.country }}</p>
-  </button>
+  <ion-item *ngFor="let result of results" (click)="getWeather(result.name)">
+    <result-item [result]="result"></result-item>
+  </ion-item>
+  <div *ngIf="results.length === 0" class="no-results">
+    <p text-center>You don't have any results,</p>
+    <p text-center> please try searching something :)</p>
+  </div>
 </ion-content>

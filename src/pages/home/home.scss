@@ -1,7 +1,17 @@
-ion-header {
-    ion-toolbar {
-        .toolbar-background {
-            background-color: white;
+home-page {
+    
+    .home {
+        background-image: url('../assets/imgs/background.png');
+        background-size: cover;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+
+        .no-results {
+            color: white;
+
+            p {
+                font-style: italic;
+            }
         }
     }
 }
