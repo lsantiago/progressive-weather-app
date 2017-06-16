@@ -33,28 +33,5 @@ export class WeatherPage implements OnInit{
       this.current.min_c = this.forecast[0].day.mintemp_c;
       this.current.astro = this.forecast[0].astro;
     });
-
-    let date = new Date();
-    let phasesDate = (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear();
-    this.weather.moonphases(phasesDate, 4).subscribe(data => {
-      this.moonphases = data.phasedata;
-      this.moonphases.forEach(elem => {
-        let splits = elem.date.split(' ');
-        elem.newDate = splits[2] + ' ' + splits[1];
-        if(elem.phase === "Last Quarter") {
-          elem.img = 'assets/imgs/moon/lastq.png';
-          elem.text = 'Last Q.';
-        } else if(elem.phase === "New Moon") {
-          elem.img = 'assets/imgs/moon/newmoon.png';
-          elem.text = 'New Moon';          
-        } else if(elem.phase === "First Quarter") {
-          elem.img = 'assets/imgs/moon/firstq.png';
-          elem.text = 'First Q.';          
-        } else if(elem.phase === "Full Moon") {
-          elem.img = 'assets/imgs/moon/fullmoon.png';
-          elem.text = 'Full Moon';          
-        }
-      });
-    });
   }
 }

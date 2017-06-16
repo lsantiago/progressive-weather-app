@@ -101,22 +101,4 @@
             </ion-col> 
         </ion-row>
     </ion-grid>
-    <ion-grid class="astro-info">
-        <ion-row>
-            <ion-col col-3 *ngFor="let phase of moonphases">
-                <ion-row>
-                    {{ phase.text }}
-                </ion-row>
-                <ion-row>
-                    <img height="32" width="32" [src]="phase.img">
-                </ion-row>
-                <ion-row>
-                    {{ phase.newDate }}
-                </ion-row>
-                <ion-row>
-                    {{ phase.time }}
-                </ion-row>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
 </ion-content>
