@@ -41,7 +41,7 @@ weather-page {
                 align-items: flex-end;
 
                 .temperature {
-                    font-size: 10rem;
+                    font-size: 8rem;
                 }
             }
 
@@ -50,7 +50,7 @@ weather-page {
 
                 .celsius-icon {
                     &::before {
-                        font-size: 7rem;   
+                        font-size: 5rem;   
                     }
                 }
             }
