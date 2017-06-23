@@ -8,7 +8,7 @@
 importScripts('./build/sw-toolbox.js');
 
 self.toolbox.options.cache = {
-  name: 'ionic-cache'
+  name: 'fom-weather-cache'
 };
 
 // pre-cache our key assets
@@ -17,6 +17,7 @@ self.toolbox.precache(
     './build/main.js',
     './build/main.css',
     './build/polyfills.js',
+    './imgs/background.png',
     'index.html',
     'manifest.json'
   ]
