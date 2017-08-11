@@ -20,6 +20,12 @@ home-page {
             &.item.item-block {
                 background-color: transparent;
             }
+            .item-inner {
+                .input-wrapper {
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                }
+            }
         }
     }
 }

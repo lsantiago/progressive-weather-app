@@ -8,9 +8,11 @@
 </ion-header>
 
 <ion-content class="home" padding>
-  <ion-item *ngFor="let result of results" (click)="getWeather(result.name)">
-    <result-item [result]="result"></result-item>
-  </ion-item>
+  <ion-list>
+      <ion-item *ngFor="let result of results" (click)="getWeather(result.name)">
+          <result-item [result]="result"></result-item>
+      </ion-item>
+  </ion-list>
   <div *ngIf="results.length === 0" class="no-results">
     <p text-center>You don't have any results,</p>
     <p text-center>please try introducing your city name.</p>
