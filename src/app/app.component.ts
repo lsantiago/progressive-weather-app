@@ -8,7 +8,7 @@ import { HomePage } from '../pages/home/home';
 @Component({
   templateUrl: 'app.html'
 })
-export class MyApp {  
+export class MyApp {
   rootPage:any = HomePage;
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -20,4 +20,3 @@ export class MyApp {
     });
   }
 }
-

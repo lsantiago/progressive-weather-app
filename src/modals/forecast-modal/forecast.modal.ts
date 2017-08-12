@@ -1,19 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ViewController, NavParams } from 'ionic-angular';
 
 @Component({
   selector: 'forecast-modal',
   templateUrl: 'forecast.modal.html'
 })
-export class ForecastModal implements OnInit{
+export class ForecastModal {
 
   day;
 
   constructor(public viewCtrl: ViewController, params: NavParams) {
-     this.day =  params.get('day');
-  }
-
-  ngOnInit() {
+    this.day = params.get('day');
   }
 
   dismiss() {

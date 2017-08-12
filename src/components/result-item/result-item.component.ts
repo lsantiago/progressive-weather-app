@@ -4,14 +4,12 @@ import { Component, OnInit, Input } from '@angular/core';
   selector: 'result-item',
   templateUrl: 'result-item.component.html'
 })
-export class ResultItem implements OnInit{
+export class ResultItem implements OnInit {
 
   @Input('result') result;
 
-  constructor() {}
-
   ngOnInit() {
-      this.result.title = this.result.name.split(',')[0];
+    this.result.title = this.result.name.split(',')[0];
   }
 
 }

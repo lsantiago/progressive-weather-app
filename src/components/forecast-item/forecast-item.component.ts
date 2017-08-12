@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { ConditionsService} from '../../services/conditions.service';
+import { ConditionsService } from '../../services/conditions.service';
 
 import * as dateFns from 'date-fns';
 
@@ -8,22 +8,22 @@ import * as dateFns from 'date-fns';
   selector: 'forecast-item',
   templateUrl: 'forecast-item.component.html'
 })
-export class ForecastItem implements OnInit{
+export class ForecastItem implements OnInit {
 
   @Input('day') day;
   @Input('hour') hour;
 
-  constructor(private conditions: ConditionsService) {}
+  constructor(private conditions: ConditionsService) { }
 
   ngOnInit() {
     if (this.day) {
-      let parts = this.day.date.split('-');
-      let date = new Date(parts[0], parts[1]-1, parts[2]);
+      const parts = this.day.date.split('-');
+      const date = new Date(parts[0], parts[1] - 1, parts[2]);
       this.getDay(date);
     } else {
       this.hour.hour = this.hour.time.split(' ')[1];
-      this.hour.img = 'assets/imgs/' + this.isDay(this.hour.is_day) + '/' + 
-                      this.conditions.getDataFromCode(this.hour.condition.code).icon + '.png';
+      this.hour.img = 'assets/imgs/' + this.isDay(this.hour.is_day) + '/' +
+        this.conditions.getDataFromCode(this.hour.condition.code).icon + '.png';
     }
   }
 
@@ -32,7 +32,7 @@ export class ForecastItem implements OnInit{
   }
 
   getDay(date) {
-    if (dateFns.isToday(date)){
+    if (dateFns.isToday(date)) {
       this.day.datetext = 'Today';
     } else if (dateFns.isTomorrow(date)) {
       this.day.datetext = 'Tomorrow';

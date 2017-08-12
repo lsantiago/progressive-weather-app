@@ -19,7 +19,7 @@ export class WeatherPage implements OnInit{
               private navParams: NavParams) {}
 
   ngOnInit() {
-    let place = this.navParams.get('place');
+    const place = this.navParams.get('place');
     this.weather.forecast(place, 7).subscribe(data => {
       this.current       = data.current;
       this.location      = data.location;

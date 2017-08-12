@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import { WeatherPage } from '../weather/weather';
@@ -8,18 +8,15 @@ import { WeatherService } from '../../services/weather.service';
   selector: 'home-page',
   templateUrl: 'home.html'
 })
-export class HomePage implements OnInit{
+export class HomePage {
 
   results = [];
 
   constructor(private weather: WeatherService,
-              private navCtrl: NavController) {}
-
-  ngOnInit() {
-  }
+    private navCtrl: NavController) { }
 
   getWeather(place) {
-    this.navCtrl.push(WeatherPage, {place: place});
+    this.navCtrl.push(WeatherPage, { place });
   }
 
   onInput(event) {
